@@ -41,8 +41,9 @@ public class DepthFirst {
 
 		int time = 0;
 		// While the final state isn't solved
-		while (!isGoal(currentState) || s.isEmpty()) {
+		while ( (!isGoal(currentState) || s.isEmpty()) && currentState != null ) {
 
+				// If the depth on branch is less than 10, expand nodes
 			if (currentState.depth < 10) {
 				// Get children from current state14
 				ArrayList<Node> children = createChildren(currentState);
@@ -52,6 +53,7 @@ public class DepthFirst {
 
 			// get next Current state
 			currentState = s.pop();
+
 			if(repeats != false){
 				expandedStates.add(currentState.state);
 			}
@@ -70,7 +72,7 @@ public class DepthFirst {
 		ArrayList<Node> bestPath = new ArrayList<Node>();
 		// create the best path
 		do {
-			bestPath.add(0, currentState);
+			bestPath.add(currentState);
 			currentState = currentState.parent;
 		} 
 		while (currentState.parent != null); 

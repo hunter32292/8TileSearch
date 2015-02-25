@@ -74,7 +74,7 @@ public class BestFirst {
 						
 			// Get children from current state
 			ArrayList<Node> children = CreateChildren(current_state);
-
+			
 			// Add new children to the queue
 			addChildrenToQueue(current_state, children);	
 			
