@@ -272,29 +272,33 @@ public class Main {
 		return ourState;
     }
 	private static ArrayList<Integer> cleanInput(String one, String two, String three){
-		
+	
 		String[] state1 = one.split(",");
 		String[] state2 =  two.split(",");
 		String[] state3 = three.split(",");
+		if(state1.length == 3 && state2.length == 3 &&	state3.length == 3){
 		String[] state = {state1[0],state1[1],state1[2],
 						  state2[0],state2[1],state2[2],
 						  state3[0],state3[1],state3[2],};
-		//state array should have one of each of the following string objects
-		String[] requiredInput = {"1","2","3","4","5","6","7","8","x"};
-		for(int x=0; x < state.length; x++){
-			if(!Arrays.asList(state).contains(requiredInput[x])){
-				return null;
+			//state array should have one of each of the following string objects
+			String[] requiredInput = {"1","2","3","4","5","6","7","8","x"};
+			for(int x=0; x < state.length; x++){
+				if(!Arrays.asList(state).contains(requiredInput[x])){
+					return null;
+				}
 			}
-		}
-		ArrayList<Integer> intState = new ArrayList<Integer>();
-		for(int x=0; x < state.length; x++){
-			if(state[x].equals("x")){
-				intState.add(Integer.parseInt("0"));
-			}else{
-				intState.add(Integer.parseInt(state[x]));
+			ArrayList<Integer> intState = new ArrayList<Integer>();
+			for(int x=0; x < state.length; x++){
+				if(state[x].equals("x")){
+					intState.add(Integer.parseInt("0"));
+				}else{
+					intState.add(Integer.parseInt(state[x]));
+				}
 			}
+	
+			return intState;
 		}
-		return intState;
+			return null;
 	}
 
 	

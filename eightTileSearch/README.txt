@@ -20,7 +20,7 @@ To Compile Program
 	3. Use any of the following
 
 (To run with text prompts)			command 'java Main'
-(To run with Command Line args)		command 'java Main -args'
+(To run with command line args)		command 'java Main -args'
 
 
 To use this program with arguments, please use the following commands:
